@@ -1,22 +1,27 @@
 <?php
 session_start();
 $_SESSION["tab"] = "Add Person";
-
 if($_SESSION["login"] != 1)
-	echo '<h2 txtcolor="red">Authentication Error!!!</h2>';
+	echo '<h2>Access denied!!!</h2>';
 else{
 	include_once('header.php');
+?>
 
-		###########contents of div goes here###########
-	echo '
 	<form name="addPerson" action = "addPerson.php"  method = "POST">
 	<h2>New Registration</h2>
 	<br>
 
+	<?php
+	if(isset($_SESSION["entry_error"])){
+		echo "<p class='error'>" .$_SESSION["entry_error"]. "</p>";
+		unset($_SESSION["entry_error"]);
+	}
+	?>
+	
 	<p>  
 	<label>Name: </label>  
 	<br>
-	<input type = "text" name  = "name" class="input" required/>  
+	<input type = "text" name  = "name" class="input" />  
 	</p>  
 
 	<p>  
@@ -55,7 +60,7 @@ else{
 	<option value="O-">O-</option>
 	<option value="AB+">AB+</option>
 	<option value="AB-">AB-</option>
-	
+
 	</select>
 	</p>
 
@@ -73,10 +78,9 @@ else{
 	<p>
 	<button class="btn">Register</button>
 	</p>
+	</form>
 
-	</form>';
-
-		##################################################
+<?php
 	include_once('footer.php');
 }
 ?>
