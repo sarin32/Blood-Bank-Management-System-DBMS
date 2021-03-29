@@ -29,7 +29,15 @@ if(isset($_POST['submit'])){
         if($count === 1){  
             $_SESSION["login"] = 1;
             $_SESSION["username"] = $row["username"];
-            header('Location: Home.php');
+            $_SESSION["user_type"] = $row["type"];
+            $_SESSION["status"] = $row["status"];
+            // checks user is active or disabled
+            if ($_SESSION["status"] ==="active")
+                header('Location: Home.php');
+            else
+                $_SESSION["login_error"] = 'this user is disabled';
+                header('Location: index.php');
+
         }  
 
         // user is not present
