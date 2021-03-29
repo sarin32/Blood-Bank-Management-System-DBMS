@@ -20,24 +20,24 @@ if(isset($_POST['submit'])){
 
     else{
         // query processed to check whether the user is present or not
-        $sql = "select * from User where username = '$username' and password = '$password'";  
-        $result = mysqli_query($con, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
+        $sql = "select * from user where username = '$username' and password = '$password'";  
+        $result = $con->query($sql);
 
         // user is present
-        if($count === 1){  
+        if($result->num_rows > 0){  
+            $row = $result->fetch_assoc();
             $_SESSION["login"] = 1;
             $_SESSION["username"] = $row["username"];
             $_SESSION["user_type"] = $row["type"];
-            $_SESSION["status"] = $row["status"];
             // checks user is active or disabled
-            if ($_SESSION["status"] ==="active")
+            if ($row["status"] == 'active'){
                 header('Location: Home.php');
+            }
             else
+            {
                 $_SESSION["login_error"] = 'this user is disabled';
                 header('Location: index.php');
-
+            }
         }  
 
         // user is not present
