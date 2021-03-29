@@ -1,0 +1,137 @@
+/*********************Basic********************/
+*{
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+html{
+	background-color: #333;
+	color: #fff;
+}
+h1,h2,h3{
+	color: red;
+}
+img{
+	filter: drop-shadow(5px 5px 5px #000);
+}
+p{
+	margin-bottom: 20px;
+}
+/***************************************************/
+/******************title and logout*****************/
+.title{
+	text-shadow: 5px 6px 10px #000; 
+	color: red;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	position: relative;
+}
+.header {
+	box-shadow: 0px 0px 7px #000;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: #333;  
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	padding-bottom: 10px;
+}
+.logout{
+	float: right;
+	height: 30px;
+	margin-top: 15px;
+}
+/*************************************************/
+/**************Form input and text area***********/
+.input{
+	border-radius: 4px;
+	border: 1px solid #aaa;
+	background: linear-gradient(white,#aaa);  
+	margin-top: 4px;
+	height: 20px;
+}
+.area{
+	height: 100px;
+}
+/**********************************************/
+/*************Menus and tabs*******************/
+.tabsWraper {
+	box-shadow: 0px 5px 5px #000;
+	list-style-type: none;
+	width: 20%;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}
+.tabs a {
+	font-size: 18px;
+	height: 40px;
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	font-style: italic;
+	padding-top: 20px;
+	text-decoration: none;
+	border-bottom: 1px solid #ccc;
+}
+.tabs a.active {
+	background-color: #eee;
+	color: #000;
+}
+.tabs a:hover {
+	background-color: #fff;
+	color: #000;
+}
+/*******************************************/
+/**************contents section*************/
+.contents{
+	background-color: #333;
+	margin-left:21%;
+	padding:10px 16px;
+}
+/*********************************************/
+/****************Custom Button****************/
+.btn{  
+	font-size: 15px;
+	color: #000;  
+	background-color: #aaa;  
+	padding: 7px 15px 7px 15px;  
+	box-shadow: inset 0px 0px 20px 0px white;
+	border: 1px solid #333;
+	border-radius: 3px; 
+	font-weight: bold;
+	transition-delay: 0.6s ease;
+
+}  
+.btn:hover{
+	background-color: red; 
+	box-shadow: none;
+	color: white;
+	transition: 0.6s ease;
+}
+/********************************************/
+/****************Custom table****************/
+table {
+	border-collapse: collapse;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+}
+tr {
+	background-color: #eee;
+	color: #000;
+	text-align: left;
+}
+th{
+	padding: 12px 15px;
+	background-color: #009879;
+	color: #fff;
+	text-align: left;
+}
+td{
+	background-color: #aaa;
+	padding: 12px 15px;
+}
+/**********************************************/
