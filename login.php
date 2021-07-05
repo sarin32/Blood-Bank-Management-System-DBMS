@@ -28,16 +28,7 @@ if(isset($_POST['submit'])){
             $row = $result->fetch_assoc();
             $_SESSION["login"] = 1;
             $_SESSION["username"] = $row["username"];
-            $_SESSION["user_type"] = $row["type"];
-            // checks user is active or disabled
-            if ($row["status"] == 'active'){
-                header('Location: Home.php');
-            }
-            else
-            {
-                $_SESSION["login_error"] = 'this user is disabled';
-                header('Location: index.php');
-            }
+            header('Location: Home.php');
         }  
 
         // user is not present
